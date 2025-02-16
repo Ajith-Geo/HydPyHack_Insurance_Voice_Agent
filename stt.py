@@ -2,7 +2,7 @@ import requests
 
 def stt():
     url = "https://api.sarvam.ai/speech-to-text-translate"
-    api_key = "2eb08a65-79b8-450a-b1e1-2e0f38803075"
+    api_key = ""
     audio_file_path = "/home/ubuntu/neuraoak/latest_recording.wav"
 
     files = {
