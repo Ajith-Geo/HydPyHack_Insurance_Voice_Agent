@@ -3,13 +3,13 @@ from langchain_openai.chat_models import ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_openai.embeddings import OpenAIEmbeddings
 
-embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key="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")
+embedding_model = OpenAIEmbeddings(model="text-embedding-ada-002", openai_api_key="")
 
 def retrieval(query):
     vector_store = FAISS.load_local("faiss_index", embedding_model, allow_dangerous_deserialization=True)
 
     qa_chain = RetrievalQA.from_chain_type(
-        llm=ChatOpenAI(model="gpt-4-turbo", openai_api_key="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"),
+        llm=ChatOpenAI(model="gpt-4-turbo", openai_api_key=""),
         retriever=vector_store.as_retriever(),
         return_source_documents=True
     )
